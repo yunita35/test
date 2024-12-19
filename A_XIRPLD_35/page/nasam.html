@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menabung Sampah</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <div class="container">
+            <a class="navbar-brand" href="https://www.smkn8malang.sch.id/">
+                <img src="../asset/Smk8.png" alt="Logo SMKN 8 Malang" style="width: 50px; height: auto;"></a>
+                <img src="../asset/logo.png" alt="" top="10px" right="10px" width="50px" height="auto " >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../BankSampah.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Daftar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="jenSam.html">Jenis Sampah</a></li>
+                            <li><a class="dropdown-item" href="hasam.html">Harga Sampah</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Formulir
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="#">Menabung Sampah</a></li>
+                            <li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSckh2bh3zMjTz2x3vD2EbFXqPSndJDhTS27btDElDTYIHyPBQ/viewform?usp=sf_link">Bergabung</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeNmOiJEH4utINlJDVTUoVl7yd6GRxu7f2b850kPKydTexksg/viewform?usp=sf_link">Kritik dan Saran</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> <br> <br> <br> 
+    <h2>Setorkan Sampahmu</h2>
+    <form id="form-nabung">
+        <label for="class">Kelas:</label>
+        <input type="text" id="class" placeholder="X RPL D" required><br>
+
+        <label for="kode">Kode:</label>
+        <input type="text" id="kode" maxlength="8" placeholder="Masukkan Kode Kartu" required><br>
+
+        <label for="sampah">Jenis Sampah:</label>
+        <select id="sampah" required>
+            <option value="" disabled selected>Pilih Jenis Sampah</option>
+            <option value="Sampah Plastik">Sampah Plastik</option>
+            <option value="Sampah Kertas">Sampah Kertas</option>
+            <option value="Sampah Elektronik">Sampah Elektronik</option>
+            <option value="Sampah Organik">Sampah Organik</option>
+        </select><br>
+
+        <label for="barang">Kode Barang:</label>
+        <input type="text" id="barang" maxlength="3" placeholder="Masukkan Kode Barang" required><br>
+
+        <button type="button" onclick="addData()">Kirim</button>
+        <input type="reset" value="Batalkan">
+    </form>
+
+    <h3>Daftar Setoran</h3>
+    <table border="1" id="data-table">
+        <thead>
+            <tr>
+                <th>Kelas</th>
+                <th>Kode</th>
+                <th>Jenis Sampah</th>
+                <th>Kode Barang</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="data-body"></tbody>
+    </table>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        //menyimpan data
+        let dataSetoran = [];
+        //menambahkan data baru ke array
+        function addData() {
+            //ambil input from
+            const kelas = document.getElementById('class').value;
+            const kode = document.getElementById('kode').value;
+            const sampah = document.getElementById('sampah').value;
+            const barang = document.getElementById('barang').value;
+            //data yg diambil
+            const newData = { kelas, kode, sampah, barang };
+            dataSetoran.push(newData);
+            renderTable();//data baru
+            document.getElementById('form-nabung').reset();
+        }
+        //tabel data baru
+        function renderTable() {
+            const tbody = document.getElementById('data-body');
+            tbody.innerHTML = '';
+
+            dataSetoran.forEach((data, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${data.kelas}</td>
+                    <td>${data.kode}</td>
+                    <td>${data.sampah}</td>
+                    <td>${data.barang}</td>
+                    <td>
+                        <button onclick="printStruk(${index})">Cetak Struk</button>
+                        <button onclick="deleteData(${index})">Hapus</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function printStruk(index) {
+    // mengambil dari crud
+    const data = dataSetoran[index];
+
+    // hal baru untuk buka struk
+    const strukWindow = window.open('', '_blank');
+
+    // html struk
+    strukWindow.document.write(`
+        <html>
+            <head>
+                <title>Struk Setoran</title>
+                <style>
+                    /* Gaya umum untuk struk */
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        padding: 0;
+                        text-align: center;
+                        background-color: #f4f4f4;
+                        color: #333;
+                    }
+
+                    /* Gaya untuk judul */
+                    h1 {
+                        color: #007bff;
+                        margin-bottom: 20px;
+                    }
+
+                    /* Gaya untuk teks informasi */
+                    p {
+                        font-size: 16px;
+                        margin: 5px 0;
+                    }
+
+                    /* Gaya tombol cetak */
+                    button {
+                        background-color: #007bff;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        margin-top: 20px;
+                    }
+
+                    /* Hover effect untuk tombol cetak */
+                    button:hover {
+                        background-color: #0056b3;
+                    }
+                </style>
+            </head>
+            <body>
+                <!-- Judul Struk -->
+                <h1>Struk Setoran Sampah</h1>
+
+                <!-- Informasi Setoran -->
+                <p><strong>Kelas:</strong> ${data.kelas}</p>
+                <p><strong>Kode:</strong> ${data.kode}</p>
+                <p><strong>Jenis Sampah:</strong> ${data.sampah}</p>
+                <p><strong>Kode Barang:</strong> ${data.barang}</p>
+
+                <!-- Tombol untuk mencetak struk -->
+                <button onclick="window.print()">Cetak</button>
+            </body>
+        </html>
+    `);
+
+    // Menutup dokumen untuk memastikan bahwa semua konten sudah selesai dimuat
+    strukWindow.document.close();
+}
+
+    //untuk menghapus
+        function deleteData(index) {
+            dataSetoran.splice(index, 1);
+            renderTable();
+        }
+    </script>
+</body>
+</html>

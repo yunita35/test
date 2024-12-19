@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../asset/logo1-removebg-preview.png" type="image/png">
+    <title>Struk Tabungan</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Struk Tabungan Sampah</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Kelas</th>
+                <td id="kelas">-</td>
+            </tr>
+            <tr>
+                <th>Kode Kartu</th>
+                <td id="kode">-</td>
+            </tr>
+            <tr>
+                <th>Jenis Sampah</th>
+                <td id="sampah">-</td>
+            </tr>
+            <tr>
+                <th>Kode Barang</th>
+                <td id="barang">-</td>
+            </tr>
+        </table><hr>
+        <p><b>Terimakasih atas kerja samanya</b></p><br>
+    </div>
+    <script>
+        // Get query parameters
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('kelas').textContent = params.get('kelas') || '-';
+        document.getElementById('kode').textContent = params.get('kode') || '-';
+        document.getElementById('sampah').textContent = params.get('sampah') || '-';
+        document.getElementById('barang').textContent = params.get('barang') || '-';
+    </script>
+</body>
+</html>

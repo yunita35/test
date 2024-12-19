@@ -1,0 +1,440 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, li, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    width: auto;
+    background-image: url(asset/Green\ wallpaper.jpg);
+    padding-top: 60px;
+    background-size: cover;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;  /* Added left alignment to ensure the navbar starts from the left */
+  width: 100%; /* Make sure the navbar takes the full width */
+  z-index: 1000; 
+  background-color: #fbfbfc; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 10px 20px; 
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+  height: 50px; 
+}
+
+.navbar .nav-link {
+  color: #030303;
+  margin-right: 10px;
+  font-size: 16px; 
+}
+
+.navbar .dropdown-menu {
+  background-color: #eff1f3;
+  border: none;
+}
+
+.navbar .dropdown-item {
+  color: #080808 ;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #e4eef8;
+}
+
+/*navbar rata kanan kiri*/
+.navbar .container-fluid {
+  padding-left: 0; 
+  padding-right: 0;
+}
+
+/* tentang */
+.home {
+  background-color: #f4f4f4; /* untuk background */
+  padding: 40px 20px; 
+  text-align:left; /* text kanan */
+  font-family: 'Arial', sans-serif;
+}
+
+.home .awal h6 {
+  font-size: 18px; /*ukuran font*/
+  color: #066325; /* warna  */
+  margin-bottom: 10px; /* sepasih bawah ke atas */
+  text-transform: uppercase;
+  font-weight: bold; 
+  letter-spacing: 2px; 
+}
+
+.home .awal h1 {
+  font-size: 36px; 
+  color: #1d8f3f; 
+  font-weight: bold; /* tebal */
+  margin-bottom: 20px; 
+  text-transform: capitalize; /* huruf besar depannya ssaja*/
+}
+
+.home .awal p {
+  font-size: 16px;
+  color: #555; 
+  line-height: 1.5; /* jarak sepasih */
+  max-width: 700px; /* minimal huruf */
+  margin: 0 auto; 
+}
+
+
+/* Detail */
+.Detail {
+    padding: 30px 20px;
+    background-color: #fcfcfc9d;
+    color: #030303;
+}
+
+.Detail p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.Detail ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.Detail ul li {
+    margin-bottom: 10px;
+}
+
+/* Kontak */
+.Kontak {
+    padding: 10px 5px;
+    background-color: #142c1c;
+    text-align: left;
+    color: #fdfbfb;
+}
+
+.Kontak h2 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 10px;;
+}
+
+.Kontak p {
+    font-size: 16px;
+    color: #fdfbfb;
+    margin-bottom: 20px;
+}
+
+.Kontak input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.Kontak input[type="submit"], .Kontak input[type="reset"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.Kontak input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    width: 20%;
+}
+
+.Kontak input[type="reset"] {
+    background-color: #ccc;
+    color: #333;
+    width: 20%
+}
+
+.Kontak input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.Kontak input[type="reset"]:hover {
+    background-color: #999;
+}
+
+/*kotak saran*/
+.container{
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.contact-container{  
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* jenis sampah */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: white;
+  }
+  
+  header h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 15px;
+    color: #15ac4e;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .sampah-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+  }
+  
+  .sampah-card:hover {
+    transform: translateY(-5px); /*gerak*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sampah-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .sampah-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  .sampah-card img {
+    width: 80%; 
+    height: auto; 
+    margin-bottom: 10px; 
+    border-radius: 5px;
+    display: block; /*berlaku*/
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+/*harga sampah*/
+table {
+    margin: 20px;
+    width: 90%;
+    border-collapse: collapse; 
+    color: white;
+    background-color: rgb(246, 248, 246);
+}
+.table-container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+th, td {
+    border: 1px solid black; 
+    padding: 8px; 
+    text-align: left; 
+    background-color: #f7fcf9;
+}
+table th {
+    background-color: rgb(245, 252, 245); 
+    font-weight: bold;
+}
+
+/* bank sampah */
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  color: #333;
+  border-radius: 10px;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #198a2c;
+  margin: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button, input[type="reset"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+button:hover, input[type="reset"]:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  color: #030303;
+}
+
+table th {
+  background-color: #076116;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  margin: 10px;
+}
+
+/* For Struk */
+#struk-content {
+  text-align: center;
+  margin-top: 20px;
+}
+/* struk */
+.container h2 {
+  font-size: 24px;
+  color: #0c7538;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.container mt-5{
+  padding: 200px 70px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f0f8ff;
+  color: #333;
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #fff;
+  color: #555;
+}
+
+  
+/*responsif*/
+@media (max-width: 768px) {
+    .navbar .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .Kontak input[type="text"] {
+        width: 100%;
+    }
+
+    .row{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sampah-card{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .nabung {
+      padding: 15px;
+      margin: 10px;
+    }
+
+    .navbar-brand img {
+      width: 40px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+    }
+}
